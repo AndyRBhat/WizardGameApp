@@ -1,5 +1,17 @@
 async function fetchPythonSource() {
-  return fetch(location.href + "?raw=true").then((r) => r.text());
+
+ // return fetch(location.href + "?raw=true").then((r) => r.text());
+ const response = await fetch("./program.py");
+  const text = await response.text();
+  
+  // ADD THIS LINE TO DEBUG
+  console.log("RECEIVED CONTENT START:", text.substring(0, 50)); 
+  
+  if (text.trim().startsWith("<")) {
+      throw new Error("Server returned HTML instead of Python! Check your file path.");
+  }
+
+  return text;
 }
 
 // Error checking

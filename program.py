@@ -1,4 +1,4 @@
-from library import *
+from mylibrary import *
 from random import randint, choice
 add_background("images/grass_field.png")
 wizard = add_image("images/wizard1.gif", 50)
@@ -72,7 +72,7 @@ def add_enemy():
             animate_up(enemy, distance, time, False) 
         elif start_position == "right":
             animate_left(enemy, distance, time, False)
-   
+    
     if game_time<=100:
         for num in range(5):
             place_enemy()
