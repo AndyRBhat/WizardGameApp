@@ -1,4 +1,4 @@
-from mylibrary import *
+from wizardlib import *
 from random import randint, choice
 add_background("images/grass_field.png")
 wizard = add_image("images/wizard1.gif", 50)
