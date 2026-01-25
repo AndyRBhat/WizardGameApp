@@ -338,7 +338,7 @@ def add_text(text, size=18):
         - The text element.
 
     Example usage:
-        wizardlib_text = add_text("Wizardlib is cool!")
+        mylibrary_text = add_text("mylibrary is cool!")
     """
 
     element = document.createElement("p")

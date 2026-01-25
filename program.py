@@ -99,6 +99,4 @@ def subtract_wizard_hp():
     if wizard_health <= 0:
         game_over()
 add_enemy()
-add_enemy()
-add_enemy()
 keydown(move_wizard)
