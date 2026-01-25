@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js"></script>
+    <link rel="stylesheet" href="resources/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Wizard Survival</title>
+  </head>
+  <body>
+    
+      <!-- Title of the project -->
+    <h1 id="title"></h1>
+   
+    <div id="container">
+      <pre id="error"></pre>
+   
+      <div class="button-container">
+        <!-- Play Button -->
+        <button id="start" class="button-style" onclick="start(this);">
+          <img src="resources/play.png" class="btn-icon">
+          <p class="btn-text">Play</p>
+        </button>
+        <!-- Reload Button -->
+        <button id="reload" class="button-style other-buttons" onclick="window.location.reload();" disabled>
+          <img src="resources/reload.png" class="btn-icon">
+          <p class="btn-text">Reload</p>
+        </button>
+        <!-- Volume Button -->
+        <button id="volume" class="button-style other-buttons" onclick="mutePage();" disabled>
+          <img src="resources/volume.png" class="btn-icon">
+          <p class="btn-text">Music</p>
+        </button>
+      </div>
+      
+      <!-- Canvas for students to make their projects -->
+      <div id="canvas">
+        <div id="blackout" title="Press the Play button to interact with this application."></div>
+      </div>
+    </div>
+    <script src="resources/button_config.js"></script>
+  </body>
+</html>

@@ -1,0 +1,266 @@
+/* Fonts for students to use in their projects */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Nabla&family=Press+Start+2P&family=Quicksand&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Spirax&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+/* hide the overflow */
+html {
+  overflow: auto;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+   /* Webpage fade-in effect */
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  /* Positioning and text decoration */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-image:url('bg-1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Webpage fade-in effect */
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Position images */
+img {
+  position: absolute;
+  top: 0;
+  margin: 0;
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Updates add_text() text styling */
+p {
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+
+#canvas p {
+      max-width: 610px;
+    background-color: #001424c2;
+    backdrop-filter: blur(2px);
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 20px;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size:18px !important;
+  z-index: 10;
+  border-radius: 5px;
+  line-height: 33px;
+  
+}
+
+#canvas img {
+  border-radius: 10px;
+}
+
+input {
+  align-self: flex-start;
+}
+
+#canvas input {
+  background-color: #C3E0E5;
+  border-radius: 5px;
+  border: #274472;
+  height: 35px;
+  width: 300px;
+  color: #274472;
+  transition: .5s;
+  background-color: #BFD7ED;
+} 
+
+#canvas input:hover {
+  transition: .5s;
+  background-color: #9bc3e8;
+}
+
+/* Start screen background and positioning */
+#blackout {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* For popup message when there's an error in the code */
+#error {
+  position: absolute;
+  top: 80px;
+  left: 50%; 
+  transform: translate(-47%, -50%);
+  width: 900px;
+  z-index: 2;
+  color: white;
+  background-color: #ec4031;
+  font-family: 'Roboto Mono', monospace;
+  font-size:25px;
+  border-radius: 10px;
+  word-wrap: break-word;
+  margin: 0px;
+  z-index: 2;
+  white-space: pre-wrap;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Box that goes around the canvas */
+#container {
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #333652;
+  border: 5px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+/* The canvas is where the student's code gets compiled */
+#canvas {
+  /* Webpage fade-in effect */
+  animation: fadeInAnimation ease 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 1;
+  /* Canvas sizing */
+  height: 600px;
+  width: 1000px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  /* Other canvas styling */
+  background-color: white;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Start button */
+button {
+  z-index: 1;
+}
+
+.button-container > button {
+  display:block;
+}
+
+/* Styles the start buttons */
+.button-style {
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s all ease;
+  width: 80px;
+  height: 110px;
+  padding: 5px;
+  margin: 15px;
+  transition: 0.5s;
+  background: transparent;
+  border: none;
+}
+
+.button-style[disabled] {
+  filter: grayscale(1);
+  cursor: not-allowed;
+  border: none;
+}
+
+.button-style[disabled] > .btn-text {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn-icon {
+  position: static;
+  height: 50px;
+}
+
+.btn-text {
+  position: static;
+  color: white;
+  margin-top: 10px;
+  font-family: 'Comic Neue', cursive;
+}
+
+/* Hover effect buttons */
+.button-style:hover {
+  background-color: #282a3c;
+}
+
+.button-style[disabled]:hover {
+  background-color: transparent;
+}
+
+#canvas button {
+    width: 100px;
+    height: 50px;
+    border: 2px solid #86512e;
+    background-color: #ad7a4a;
+    color: #fad496;
+    border-radius: 10px;
+    transition: .5s;
+  font-weight: bold;
+    font-family: 'Love Ya Like A Sister', cursive;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(250,212,150, 0.2) 0px 6px 12px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  cursor: pointer;
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=120613);
+}
+
+#canvas button:hover {
+  transition: .5s;
+  background-color: #fad496;
+  color: #86512e;
+}
+
+/* Title that goes above the canvas */
+#title {
+  text-align: center;
+  font-size: 60px;
+  font-weight: normal;
+  color: #fefef3;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Bebas Neue', cursive;
+  padding: 10px;
+  width: 300px;
+  margin: 20px auto;
+}
+
+:root {
+  --height: 10%;
+}
