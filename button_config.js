@@ -4,16 +4,16 @@ async function fetchPythonSource() {
 }
 
 // Helper to fetch the library
-async function fetchWizardLib() {
-  return fetch("./wizardlib.py").then((r) => r.text());
+async function fetchmylibrary() {
+  return fetch("./mylibrary.py").then((r) => r.text());
 }
 
 // Error checking
 function addErrorToDOM(error) {
-  const wizardlibError = error.message.split(/Error in/)[1];
+  const mylibraryError = error.message.split(/Error in/)[1];
   let errorMessage;
-  if (wizardlibError) {
-      errorMessage = "Error in" + wizardlibError;
+  if (mylibraryError) {
+      errorMessage = "Error in" + mylibraryError;
   } else {
       let errorTokens = error.message.split(/  File/);
       let lastToken = errorTokens.pop();
@@ -33,17 +33,11 @@ const pyodideLoadedEvent = new Event("PyodideLoaded");
 
 (async () => {
   let pyodide = await loadPyodide();
-  // FIX 2: Load wizardlib.py and write it to the virtual filesystem
-  // This allows "from wizardlib import *" to work in Python
-  let librarySource = await fetchWizardLib();
-  pyodide.FS.writeFile("wizardlib.py", librarySource);
+  let librarySource = await fetchmylibrary();
+  pyodide.FS.writeFile("mylibrary.py", librarySource);
 
   // Load the main program
   let pythonSourceCode = await fetchPythonSource();
-  
-  // FIX 3: REMOVED the line that deletes the import. 
-  // We need "from wizardlib import *" to stay in the code!
-  // pythonSourceCode = pythonSourceCode.replace("from wizardlib import *", "")
   pyodide.runPython(pythonSourceCode);
 })()
   .then(() => {
