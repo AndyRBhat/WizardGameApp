@@ -1,17 +1,11 @@
+// FIX 1: Point directly to your program file
 async function fetchPythonSource() {
+  return fetch("./program.py").then((r) => r.text());
+}
 
- // return fetch(location.href + "?raw=true").then((r) => r.text());
- const response = await fetch("./program.py");
-  const text = await response.text();
-  
-  // ADD THIS LINE TO DEBUG
-  console.log("RECEIVED CONTENT START:", text.substring(0, 50)); 
-  
-  if (text.trim().startsWith("<")) {
-      throw new Error("Server returned HTML instead of Python! Check your file path.");
-  }
-
-  return text;
+// Helper to fetch the library
+async function fetchWizardLib() {
+  return fetch("./wizardlib.py").then((r) => r.text());
 }
 
 // Error checking
@@ -39,8 +33,17 @@ const pyodideLoadedEvent = new Event("PyodideLoaded");
 
 (async () => {
   let pyodide = await loadPyodide();
+  // FIX 2: Load wizardlib.py and write it to the virtual filesystem
+  // This allows "from wizardlib import *" to work in Python
+  let librarySource = await fetchWizardLib();
+  pyodide.FS.writeFile("wizardlib.py", librarySource);
+
+  // Load the main program
   let pythonSourceCode = await fetchPythonSource();
-  pythonSourceCode = pythonSourceCode.replace("from wizardlib import *", "")
+  
+  // FIX 3: REMOVED the line that deletes the import. 
+  // We need "from wizardlib import *" to stay in the code!
+  // pythonSourceCode = pythonSourceCode.replace("from wizardlib import *", "")
   pyodide.runPython(pythonSourceCode);
 })()
   .then(() => {

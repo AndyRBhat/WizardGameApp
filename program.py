@@ -7,6 +7,7 @@ start_y = 275
 position_element(wizard, start_x, start_y)
 game_time=135
 timer_text = add_text(f"Time Left: {game_time}")
+position_element(timer_text, "right", "top")
 add_background_audio("audio/game-music.mp3")
 
 x = start_x
@@ -85,7 +86,7 @@ def add_enemy():
     else:
         for num in range(3):
             place_enemy()
-set_interval(add_enemy, 1)
+set_interval(countdown, 1)
 set_timeout(win_game, game_time)
 def game_over():
     clear()

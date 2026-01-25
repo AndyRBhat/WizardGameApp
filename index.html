@@ -4,22 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.29.2/full/pyodide.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.js"></script>
     <link rel="stylesheet" href="resources/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <title>Wizard Survival</title>
   </head>
   <body>
-      <script type="text/javascript">
-      async function main(){
-        let pyodide = await loadPyodide();
-        console.log(pyodide.runPython("1 + 2"));
-      }
-      main();
-    </script>  
+
     <!-- Title of the project -->
-    <h1 id="title">Andy's Wizard Survival</h1>
-   
+    <h1 id="title">Wizard Survival</h1>
+    <h2 id="subtitle">by Andy Bhat</h2>
+  
     <div id="container">
       <pre id="error"></pre>
    
@@ -39,14 +34,16 @@
           <img src="resources/volume.png" class="btn-icon">
           <p class="btn-text">Music</p>
         </button>
+          <div class="bottom-right-text">
+              Use "w" for up, "a" for left, "s" for down, and "d" for right to move the wizard.
+          </div>
       </div>
       
-      <!-- Canvas for students to make their projects -->
       <div id="canvas">
         <div id="blackout" title="Press the Play button to interact with this application."></div>
       </div>
     </div>
     
-    <script src="resources/button_config.js"></script>
+    <script src="button_config.js"></script>
   </body>
 </html>

@@ -257,8 +257,33 @@ button {
   text-shadow: black 1px 0 10px;
   font-family: 'Bebas Neue', cursive;
   padding: 10px;
-  width: 300px;
+  width: 700px;
   margin: 20px auto;
+}
+
+/* Title that goes above the canvas */
+#subtitle {
+  text-align: center;
+  font-size: 30px;
+  font-weight: normal;
+  color: #fefef3;
+  text-shadow: black 1px 0 10px;
+  font-family: 'Bebas Neue', cursive;
+  padding: 10px;
+  width: 700px;
+  margin: 10px auto;
+}
+
+.bottom-right-text {
+    position: fixed; /* Positions the element relative to the browser window */
+    bottom: 10px;    /* 10 pixels from the bottom edge of the viewport */
+    right: 10px;     /* 10 pixels from the right edge of the viewport */
+    background-color: #f0f0f0; /* Optional: adds a background for visibility */
+    padding: 10px 15px;      /* Optional: adds spacing inside the box */
+    border: 1px solid #ccc;  /* Optional: adds a border */
+    border-radius: 5px;      /* Optional: rounds the corners */
+    font-size: 14px;         /* Optional: sets font size */
+    color: #333;             /* Optional: sets text color */
 }
 
 :root {
