@@ -4,6 +4,7 @@
 
 ![Game Screenshot](/images/Game%20screenshot.png)
 
+# 🎮 [CLICK HERE TO PLAY THE GAME](https://andyrbhat.github.io/WizardGameApp/)
 ---
 
 ## 📖 About the Project
