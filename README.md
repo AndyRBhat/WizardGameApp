@@ -72,15 +72,38 @@ The application relies on `pyodide.js` to load the Python runtime.
 
 Because this project uses WebAssembly, browsers will block it if you try to open `index.html` directly from your file explorer due to **CORS (Cross-Origin Resource Sharing)** policies. You must run a local server to play it.
 
-**1. Clone the repository**
-git clone [https://github.com/yourusername/wizard-survival.git](https://github.com/yourusername/wizard-survival.git)
-cd wizard-survival
+### Option 1: Using Visual Studio Code (Recommended)
+This is the easiest method if you are using VS Code.
 
-2. Start a local server (using Python):
-python -m http.server
+1.  **Install the "Live Server" Extension:**
+    * Open VS Code and click the Extensions icon on the left sidebar.
+    * Search for **"Live Server"** (by Ritwick Dey) and install it.
+2.  **Open the Project:**
+    * Open the `wizard-survival` folder in VS Code.
+3.  **Launch the Game:**
+    * Right-click on `index.html` in the file explorer.
+    * Select **"Open with Live Server"**.
+    * Your default browser will open automatically and the game will load.
 
-3. Open the Game:
-! Open http://localhost:8000 in your browser
+> **⚠️ Note on "Missing Import" Errors:**
+> When viewing the code in VS Code, you may see red error squiggles under lines like `from js import document` or `from pyodide import ...`.
+> * **This is normal.** These libraries only exist inside the web browser's runtime (Pyodide).
+> * Your local Python linter (Pylance) cannot see them, but the code will run perfectly in the browser.
+
+### Option 2: Using Python Terminal
+If you prefer the command line or don't use VS Code:
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/yourusername/wizard-survival.git](https://github.com/yourusername/wizard-survival.git)
+    cd wizard-survival
+    ```
+2.  **Start the server:**
+    ```bash
+    python -m http.server
+    ```
+3.  **Open the Game:**
+    * Visit `http://localhost:8000` in your browser.
 
 ``
 ## 🔮 Future Improvements
