@@ -1,6 +1,6 @@
 # 🧙‍♂️ Wizard Survival
 
-> **A browser-based survival game built with Python, running entirely in the client via WebAssembly (Pyodide).**
+> **A survival game built with Python, running entirely in the browser using Pyodide, which is a webAssembly translator that teaches the browser to understand Python.**
 
 ![Game Screenshot](/images/Game%20screenshot.png)
 
@@ -9,7 +9,7 @@
 
 ## 📖 About the Project
 
-**Wizard Survival** is an interactive 2D game where players control a wizard to dodge incoming enemies and survive against the clock.
+**Wizard Survival** is an interactive 2D survival game where players play as a wizard travelling in a forest, where they must dodge incoming, hungry monsters and survive for 135 seconds!
 
 I built this project to practice **Event-Driven Programming** and **Python Logic**. Unlike standard Python scripts that run in a terminal, this project runs in the browser using **Pyodide**, allowing me to write Python code that controls web elements in real-time.
 
@@ -17,14 +17,14 @@ I built this project to practice **Event-Driven Programming** and **Python Logic
 This project helped me deepen my understanding of:
 * **WebAssembly:** Running compiled Python code in the browser without a backend server.
 * **Event-Driven Programming:** Handling user inputs and game loops asynchronously.
-* **Algorithm Design:** Creating difficulty scaling that reacts to the game timer.
+* **Algorithm Design:** Creating difficulty (No. of monsters spawned) that scales with the game timer.
 
 ---
 
 ## 🎮 How to Play
 
-* **Objective:** Survive for **135 seconds** without letting your health drop to zero.
-* **Mechanics:** Enemies spawn at increasing rates as the timer counts down. Colliding with enemies reduces health.
+* **Objective:** Survive for **135 seconds** without dying.
+* **Mechanics:** Monsters spawn at increasing rates as the timer counts down. Try to survive their assault!
 
 ### 🕹️ Controls
 
@@ -39,20 +39,20 @@ This project helped me deepen my understanding of:
 
 ## 🛠️ Technical Implementation
 
-This project utilizes a custom architecture to execute Python in the browser.
+The project utilizes Pyodide to run python on a webpage.
 
 ### 1. Game Logic (My Contribution)
 The core gameplay resides in `program.py`, which I wrote to implement the game mechanics.
 * **State Management:** Tracking variables for health, timer, and coordinate positions (`x`, `y`).
-* **Game Loop:** Implementing the `countdown()` and enemy spawning logic using interval timers.
-* **Collision Logic:** Defining how the wizard interacts with enemies.
-* **Input Handling:** Binding keyboard events to coordinate updates.
-* **Algorithm Design:** Creating logic that increases enemy spawn rates as the timer decreases (difficulty scaling).
+* **Game Loop:** Implementing the `countdown()` function and monster spawning logic using interval timers.
+* **Collision Logic:** Defining what happens to the wizard(player)'s health when they get hit by the monsters.
+* **Input Handling:** Allowing for player movement using standard WASD keystrokes.
+* **Algorithm Design:** Creating logic that increases monster spawn rates as the timer decreases (difficulty scaling).
 
 ### 2. The Engine (Pyodide & JavaScript)
-The application relies on `pyodide.js` to load the Python runtime.
-* **`button_config.js`**: Fetches the raw Python code and writes it to Pyodide's virtual filesystem. It captures browser events to initialize the game loop.
-* **`mylibrary.py` (Helper Tool)**: To facilitate interaction with the HTML DOM, I utilized a helper library that abstracts low-level JS operations. It handles creating HTML elements, CSS transformations, and managing `setTimeout`/`setInterval`.
+This game uses `pyodide.js` to load the Python runtime.
+* **`button_config.js`**: Fetches the raw Python code and writes it to Pyodide's virtual filesystem. It captures browser events to start the game loop.
+* **`mylibrary.py` (Helper Tool)**: To support interaction with the HTML DOM, I utilized a helper library that abstracts functions needed to handle HTML elements. It handles creating HTML elements, CSS transformations, and managing `setTimeout`/`setInterval`.
 
 ---
 
@@ -110,7 +110,7 @@ If you prefer the command line or don't use VS Code:
 ## 🔮 Future Improvements
 [ ] Scoreboard: Implement local storage to save high scores.
 
-[ ] Power-ups: Add collectible items to restore health or freeze enemies.
+[ ] Power-ups: Add collectible items to restore health or help dealing with monsters.
 
 [ ] Mobile Support: Add touch controls for mobile playability.
 
