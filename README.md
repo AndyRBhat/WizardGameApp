@@ -71,7 +71,7 @@ This game uses `pyodide.js` to load the Python runtime.
 ```
 ## 🚀 How to Run Locally
 
-Because this project uses WebAssembly, browsers will block it if you try to open `index.html` directly from your file explorer due to **CORS (Cross-Origin Resource Sharing)** policies. You must run a local server to play it.
+Because this project uses WebAssembly, browsers will block it if you try to open `index.html` directly from your file explorer due to some policies. You must run a local server to play it.
 
 ### Option 1: Using Visual Studio Code (Recommended)
 This is the easiest method if you are using VS Code.
