@@ -89,7 +89,7 @@ This is the easiest method if you are using VS Code.
 > **⚠️ Note on "Missing Import" Errors:**
 > When viewing the code in VS Code, you may see red error squiggles under lines like `from js import document` or `from pyodide import ...`.
 > * **This is normal.** These libraries only exist inside the web browser's runtime (Pyodide).
-> * Your local Python linter (Pylance) cannot see them, but the code will run perfectly in the browser.
+> * Your local visual studio editor (Pylance extention) cannot see them, but the code will run perfectly in the browser.
 
 ### Option 2: Using Python Terminal
 If you prefer the command line or don't use VS Code:
@@ -110,7 +110,7 @@ If you prefer the command line or don't use VS Code:
 ## 🔮 Future Improvements
 [ ] Scoreboard: Implement local storage to save high scores.
 
-[ ] Power-ups: Add collectible items to restore health or help dealing with monsters.
+[ ] Power-ups: Add tomes(power ups) to restore health or help dealing with monsters.
 
 [ ] Mobile Support: Add touch controls for mobile playability.
 
